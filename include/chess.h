@@ -13,7 +13,7 @@ class chess{
         int Position_x,Position_y;
         int color;
         bool is_king;
-        virtual void move();
+        virtual void move(int x,int y);
         virtual void eat();
 };
 class king:public chess{
@@ -56,10 +56,10 @@ class pawn:public chess{
         void eat();
         void trans_pawn();//升变
 };
-class horse:public chess{
+class knight:public chess{
     public:
-        horse();
-        ~horse();
+        knight();
+        ~knight();
         void move();
         void eat();
 };
@@ -68,4 +68,5 @@ class chessboard{
         chessboard();
         ~chessboard();
 };
+
 #endif
