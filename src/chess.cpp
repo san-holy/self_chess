@@ -41,4 +41,4 @@ king::king(){
     this->Position_y=1;
     board[this->Position_x][this->Position_y]=this->name;
 }
-
+//test
