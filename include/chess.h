@@ -4,69 +4,29 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+enum ChessType{
+    KING,
+    QUEEN,
+    ROOK,// 车
+    BISHOP,
+    KNIGHT,// 马
+    PAWN,// 兵
+    NONE
+};
 using ChessBoard=char[8][8];
+class chess_basic{
+    public:
+        void move(ChessType type,int x,int y);
+        void get_position(int &x,int &y);
+        void set_position(int x,int y);
+        
+    private:
+        int position_x,position_y;
+};
 class chess{
     public:
-        chess();
-        ~chess();
-        char name;
-        int Position_x,Position_y;
-        int color;
-        bool is_king;
-        virtual void move(int x,int y);
-        virtual void eat();
+        chess_basic basic;
+    private:
+        ChessType type;
 };
-class king:public chess{
-    public:
-        king();
-        ~king();
-        void move(int x,int y);
-        void eat();
-        void trans_king_rook();
-};
-class rook:public chess{
-    public:
-        rook();
-        ~rook();
-        void move();
-        void eat();
-        void trans_rook_king();
-};
-class bishop:public chess{
-    public:
-        bishop();
-        ~bishop();
-        void move();
-        void eat();
-
-};
-class queen:public chess{
-    public:
-        queen();
-        ~queen();
-        void move();
-        void eat();
-
-};
-class pawn:public chess{
-    public:
-        pawn();
-        ~pawn();
-        void move();
-        void eat();
-        void trans_pawn();//升变
-};
-class knight:public chess{
-    public:
-        knight();
-        ~knight();
-        void move();
-        void eat();
-};
-class chessboard{
-    public:
-        chessboard();
-        ~chessboard();
-};
-
 #endif
